@@ -1,0 +1,10 @@
+<form>
+<h1>Full Article</h1>
+<p> <%= @hd %> </p>
+<%headline= @hd %>
+<p>Please find the complete article <a href= "<%= @a_link %>" target="_blank"><%= @a_link %></a> </p>
+<p> <%= @rsss %> </p>
+<%= link_to "Start Discussion",{:controller => 'news_discussions', :hl => headline, :method => 'get', :action => 'new' }%>
+<br>
+<%= link_to "Back to Headlines", newscategory_index_path%>
+</form>

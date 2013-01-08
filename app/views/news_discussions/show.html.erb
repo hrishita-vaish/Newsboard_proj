@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Headline:</b>
+  <%= @news_discussion.headline %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @news_discussion.content %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @news_discussion.name %>
+</p>
+
+<h3>Comments</h3>
+<%= render @news_discussion.comments%>
+
+<h3>Add a comment:</h3>
+<%= render "comments/form" %>
+
+<%= link_to 'Edit', edit_news_discussion_path(@news_discussion) %> |
+<%= link_to 'Back', news_discussions_path %>
+<br>
+<%= link_to "Back to Headlines", newscategory_index_path%>

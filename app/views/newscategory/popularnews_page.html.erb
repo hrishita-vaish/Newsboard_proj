@@ -1,0 +1,10 @@
+<h1>Popular News</h1>
+<% @rssp.items.each do |r| %>
+<%=  r.try(:title) %>		
+<%headline = r.try(:title)%>
+<%desc = r.try(:description)%>
+<%= link_to "Read full article" , {:controller => 'newscategory', :action => 'description', :hl => headline, :rss => desc} %>
+
+<br>
+<br>
+<% end %>

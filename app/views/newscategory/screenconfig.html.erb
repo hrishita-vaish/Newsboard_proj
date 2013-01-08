@@ -1,0 +1,30 @@
+
+<h2>Screen Configuration</h2>
+<%= form_tag  %>
+<div class="field">
+<p> Select the news type to be displayed on <strong>First</strong> position</p>
+ <%= label_tag :NewsCategory  %><br/>
+ <%= select_tag :NewsCategory1, options_for_select([["None", "None"], ["Latest News", "Latest News"], ["Popular News", "Popular News"], ["Business News", "Business News"], ["Sports News", "Sports News"]]) %>
+</div>
+
+<div class="field">
+<p> Select the news type to be displayed on <strong>Second</strong> position</p>
+ <%= label_tag :NewsCategory %><br/>
+ <%= select_tag :NewsCategory2, options_for_select([["None", "None"], ["Latest News", "Latest News"], ["Popular News", "Popular News"], ["Business News", "Business News"], ["Sports News", "Sports News"]]) %>
+</div>
+
+<div class="field">
+<p> Select the news type to be displayed on <strong>Third</strong> position</p>
+ <%= label_tag :NewsCategory %><br/>
+ <%= select_tag :NewsCategory3, options_for_select([["None", "None"], ["Latest News", "Latest News"], ["Popular News", "Popular News"], ["Business News", "Business News"], ["Sports News", "Sports News"]]) %>
+</div>
+
+<div class="field">
+<p> Select the news type to be displayed on <strong>Fourth</strong> position</p>
+ <%= label_tag :NewsCategory %><br/>
+ <%= select_tag :NewsCategory4, options_for_select([["None", "None"], ["Latest News", "Latest News"], ["Popular News", "Popular News"], ["Business News", "Business News"], ["Sports News", "Sports News"]]) %>
+</div>
+ <div class="actions">
+    <%= submit_tag%>
+  </div>
+<!--(:controller => 'newscategory', :action => 'screenconfig', :method => 'get', :d1 => NewsCategory1.value)-->

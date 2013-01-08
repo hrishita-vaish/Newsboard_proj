@@ -1,0 +1,32 @@
+<%= paginate @news_discussions %>
+
+<h1>Listing news_discussions</h1>
+
+<table>
+  <tr>
+    <th>Headline</th>
+    <th>Content</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @news_discussions.each do |news_discussion| %>
+  <tr>
+    <td><%= news_discussion.headline %></td>
+    <td><%= news_discussion.content %></td>
+    <td><%= news_discussion.name %></td>
+    <td><%= link_to 'Show', news_discussion %></td>
+    <td><%= link_to 'Edit', edit_news_discussion_path(news_discussion) %></td>
+    <% if can? :destroy, @news_discussions %>
+    <td><%= link_to 'Destroy', news_discussion, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'New News discussion', new_news_discussion_path %>
+<br>
+<%= link_to "Back to Headlines", newscategory_index_path%>

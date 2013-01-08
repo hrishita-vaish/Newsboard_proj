@@ -1,0 +1,12 @@
+<meta http-equiv="refresh" content="120" />
+<h1>Latest News</h1>
+<% @rss.items.each do |r| %>		
+
+<%= r.try(:title)%>
+
+<%headline = r.try(:title)%>
+<%link_article = r.try(:link)%>
+<%= link_to "Read full article" , {:controller => 'newscategory', :action => 'description', :hl => headline, :al => link_article} %>
+<br>
+<br>
+<% end %>

@@ -1,0 +1,65 @@
+<style>
+a:link {color:#3399FF;}    /* unvisited link */
+a:visited {color:#6699FF;} /* visited link */
+a:hover {color:#3333FF;}   /* mouse over link */
+</style>
+<div id="news">
+
+</div>
+
+<div id="tabs">
+    <ul id="sortable">
+        <li class="hide1"><a href="#tabs-1">Latest News</a>
+        <span class="ui-icon-close">x</span></li>
+        <li class="hide2"><a href="#tabs-2">Popular News</a>
+        <span class="ui-icon-close">x</span></li>
+        <li class="hide3"><a href="#tabs-3">Business News</a>
+        <span class="ui-icon-close">x</span></li>
+        <li class="hide4"><a href="#tabs-4">Sports News</a>
+        <span class="ui-icon-close">x</span></li>
+    </ul>
+
+    <div id="tabs-1">
+    	<%= render 'latestnews_page' %>
+    </div>
+
+    <div id="tabs-2">
+        <%#= paginate @rssp %>
+        <h1>Popular News</h1>
+        <% @rssp.items.each do |r| %>
+        <%=  r.try(:title) %>		
+        <%headline = r.try(:title)%>
+        <%link_article = r.try(:link)%>
+        <%#= newsheadline(@rssp)%>
+        <%= link_to "Read full article" , {:controller => 'newscategory', :action => 'description', :hl => headline, :al => link_article} %>
+        <br>
+        <br>
+        <% end %>
+
+    </div>
+    
+    <div id="tabs-3">
+       <h1>Business News</h1>
+        <% @rssb.items.each do |r| %>
+        <%=  r.try(:title) %>		
+        <%headline = r.try(:title)%>
+        <%link_article = r.try(:link)%>
+        <%= link_to "Read full article" , {:controller => 'newscategory', :action => 'description', :hl => headline, :al => link_article} %>
+        <br>
+        <br>
+        <% end %>
+    </div>
+    
+    <div id="tabs-4">
+     	<h1>Sports News</h1>
+        <% @rsssp.items.each do |r| %>
+        <%=  r.try(:title) %>		
+        <%headline = r.try(:title)%>
+        <%link_article = r.try(:link)%>
+        <%= link_to "Read full article" , {:controller => 'newscategory', :action => 'description', :hl => headline, :al => link_article} %>
+        <br>
+        <br>
+        <% end %>
+     </div>
+</div>
+
