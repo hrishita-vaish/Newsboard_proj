@@ -8,7 +8,6 @@ class NewscategoryController < ApplicationController
 def index
   @rss = SimpleRSS.parse open("http://rss.cnn.com/rss/cnn_latest.rss")
   @rssp = SimpleRSS.parse open("http://feeds.hindustantimes.com/HT-HomePage-TopStories")
-  #@rssp =  @rssp.page( params[:page]).per(6)
   @rssb = SimpleRSS.parse open("http://rss.cnn.com/rss/edition_business.rss")
   @rsssp = SimpleRSS.parse open("http://rss.cnn.com/rss/edition_sport.rss")
 end

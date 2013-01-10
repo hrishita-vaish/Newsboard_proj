@@ -17,6 +17,8 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+   gem 'rspec-rails', '~> 2.4'
+   gem 'factory_girl_rails'
 end
 gem 'tabs_on_rails' #gem for tabs UI
 # Gems used only for assets and not required

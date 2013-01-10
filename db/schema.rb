@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130107081351) do
   end
 
   create_table "tabpositions", :force => true do |t|
+    t.string   "tabname"
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
