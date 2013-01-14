@@ -11,6 +11,7 @@ gem 'cancan'
 gem "bootstrap-sass", ">= 2.1.1.0" #added to display tab based UI
 gem 'simple-rss' #gem for using live rss feeds
 gem 'kaminari'
+
 group :production do
   gem 'pg'
 end

@@ -51,4 +51,19 @@ describe "News Discussion model" do
     	news = NewsDiscussion.reflect_on_association(:comments)
     	news.macro.should == :has_many
     end
+
+  it "comments should be destroyed when discussion is destroyed" do
+    newsdiscussion = NewsDiscussion.create(:headline => "too much fog")
+    newsdiscussion.comments << Comment.create(:body => "visibility hampered")
+    p "+++++++++++++++++"
+    p newsdiscussion
+    p newsdiscussion.comments
+    expect {
+    newsdiscussion.destroy
+    }.to change(Comment, :count).by(-1)
+    NewsDiscussion.all.should_not include("visibility hampered")
+    p "!!!!!!!!!!!!!!!!!!!!!!!"
+    p newsdiscussion
+    p newsdiscussion.comments
+  end
 end

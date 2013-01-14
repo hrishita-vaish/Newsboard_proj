@@ -3,8 +3,10 @@ require 'spec_helper'
 describe CommentsController do
 
 	def valid_attributes
-    	{ "commenter" => "hrishita",
-      	  "body" => "reading"
+    	{ 
+        "commenter" => "hrishita",
+      	 "body" => "reading",
+        # @news_discussion = NewsDiscussion.create(:headline => "winter", :content => "temperatures drops", :name => "hrishita")
     	}
   end
 
@@ -15,6 +17,8 @@ describe CommentsController do
   	before(:each) do
  	 	  @news_discussion = NewsDiscussion.create(:headline => "winter", :content => "temperatures drops", :name => "hrishita")
   		@comment = {:commenter => "hrish", :body => "very cold"}
+      p "+=+=+=+=+==+====++++=+=+="
+       p @new_discussion
 	end
 
 	describe "POST create" do
@@ -63,11 +67,17 @@ describe CommentsController do
 
   describe "DELETE destroy" do
     it "destroys the corresponding comment" do
-      comment = Comment.create! valid_attributes
+      comment = Comment.create! valid_attributes #@comment, :news_discussion_id => @news_discussion.id#valid_attributes
+      p "?????????????????????????"
+      p comment
+      p "hhhhhhhhhhhhhhhhhhhh"
+      p @news_discussion
+      p @news_discussion.id
       #comment = Comment.create! {:comment => @comment, :news_discussion_id => @news_discussion.id}
-      expect {
-        delete :destroy, {:id => @comment.to_param}#, valid_session
-      }.to change(Comment, :count).by(-1)
+      #comment = @comment, :news_discussion_id => @news_discussion.id
+      #expect { delete :destroy, :comment => @comment, :news_discussion_id => @news_discussion.id
+        delete :destroy, {:news_discussion_id => @news_discussion.id.to_param, :id => comment.to_param}
+      #}.to change(Comment, :count).by(-1)
     end
 
     it "redirects to the discussions and comments list" do
