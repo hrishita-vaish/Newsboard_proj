@@ -67,24 +67,17 @@ describe CommentsController do
 
   describe "DELETE destroy" do
     it "destroys the corresponding comment" do
-      comment = Comment.create! valid_attributes #@comment, :news_discussion_id => @news_discussion.id#valid_attributes
-      p "?????????????????????????"
-      p comment
-      p "hhhhhhhhhhhhhhhhhhhh"
-      p @news_discussion
-      p @news_discussion.id
-      #comment = Comment.create! {:comment => @comment, :news_discussion_id => @news_discussion.id}
-      #comment = @comment, :news_discussion_id => @news_discussion.id
-      #expect { delete :destroy, :comment => @comment, :news_discussion_id => @news_discussion.id
+      comment = @news_discussion.comments.create!(valid_attributes)
         delete :destroy, {:news_discussion_id => @news_discussion.id.to_param, :id => comment.to_param}
       #}.to change(Comment, :count).by(-1)
     end
 
     it "redirects to the discussions and comments list" do
-      comment = Comment.create! valid_attributes
+      comment = @news_discussion.comments.create!(valid_attributes)
       #post :create, :comment => @comment, :news_discussion_id => @news_discussion.id
-      delete :destroy, {:id => comment.to_param}#, valid_session
+      delete :destroy, {:news_discussion_id => @news_discussion.id.to_param, :id => comment.to_param}#, valid_session
       response.should redirect_to news_discussion_path(@news_discussion)
     end
   end
  end
+ 

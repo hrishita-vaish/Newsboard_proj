@@ -5,6 +5,8 @@ Newsboard::Application.routes.draw do
 
   devise_for :users
 
+  # resources :newscategory
+
   get "newscategory/screenconfig"
 
   get "newscategory/description"

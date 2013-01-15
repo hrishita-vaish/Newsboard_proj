@@ -14,10 +14,10 @@
  
 <% @news_discussions.each do |news_discussion| %>
   <tr>
-    <td><%= news_discussion.headline %></td>
-    <td><%= news_discussion.content %></td>
-    <td><%= news_discussion.name %></td>
-    <td><%= link_to 'Show', news_discussion %></td>
+    <td><%= news_discussion.headline.first(40) + "..." %></td>&nbsp&nbsp&nbsp&nbsp    
+    <td><%= news_discussion.content.first(25) + "..." %></td>&nbsp&nbsp&nbsp&nbsp
+    <td><%= news_discussion.name %></td>&nbsp&nbsp&nbsp&nbsp
+    <td><%= link_to 'Show', news_discussion %></td>&nbsp&nbsp&nbsp&nbsp
     <td><%= link_to 'Edit', edit_news_discussion_path(news_discussion) %></td>
     <% if can? :destroy, @news_discussions %>
     <td><%= link_to 'Destroy', news_discussion, confirm: 'Are you sure?', method: :delete %></td>
@@ -27,6 +27,6 @@
 </table>
 
 <br />
-<%= link_to 'New News discussion', new_news_discussion_path %>
+<%#= link_to 'New News discussion', new_news_discussion_path %>
 <br>
 <%= link_to "Back to Headlines", newscategory_index_path%>

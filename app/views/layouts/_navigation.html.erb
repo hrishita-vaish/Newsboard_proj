@@ -1,14 +1,12 @@
+<style>
+ul{text-align: right;}
+</style>  
 <ul class="nav">
-<li>
-	<%= link_to('Discussion',news_discussions_path) %>
-</li>
+<li><%= link_to('Discussion',news_discussions_path) %></li>
   <% if user_signed_in? %>
-    <li>
-    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
-    </li>
+    <i><%= "Hello! " + current_user.email %></i>
+    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
   <% else %>
-    <li>
-    <%= link_to('Login', new_user_session_path)  %>  
-    </li>
+    <%= link_to('Login', new_user_session_path) %>  
   <% end %>
 </ul>

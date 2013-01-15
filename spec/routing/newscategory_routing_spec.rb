@@ -5,7 +5,7 @@ describe NewscategoryController do
   	 it "routes to index page" do
       #get("/newscategory").should route_to("newscategory#index")
 
-      expect(:get => "/newscategory").to route_to(
+      expect(:get => "/newscategory/index").to route_to(
       :controller => "newscategory",
       :action => "index"
     )
