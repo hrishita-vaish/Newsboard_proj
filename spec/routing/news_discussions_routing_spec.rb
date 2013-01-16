@@ -8,7 +8,12 @@ describe NewsDiscussionsController do
     end
 
     it "routes to #new" do
+      #newsdiscussion = NewsDiscussion.create! (:headline=> "winter", :content=> "very cold", :name=> "hrishita")
+      #if :hl = newsdiscussion.to_param
+      #get("/news_discussions/new").should route_to("news_discussions#new")
+    #else
       get("/news_discussions/new").should route_to("news_discussions#new")
+    #end
     end
 
     it "routes to #show" do
@@ -33,3 +38,4 @@ describe NewsDiscussionsController do
 
   end
 end
+

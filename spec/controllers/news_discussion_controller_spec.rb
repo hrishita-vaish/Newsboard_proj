@@ -46,6 +46,20 @@ require 'spec_helper'
       get :new, {}#, valid_session
       assigns(:news_discussion).should be_a_new(NewsDiscussion)
     end
+
+    it "redirect back" do
+      get :new, {:hl => nil}
+      #if :hl == "winter"
+        response.should redirect_to(news_discussions_url)
+     # else
+        #response.should redirect_to(news_discussions_url)
+     #end
+    end
+
+    it "redirect to new page" do
+      get :new, {:hl => "winter"}
+      response.should render_template("new")
+    end
   end
 
    describe "GET edit" do

@@ -32,8 +32,12 @@ class NewsDiscussionsController < ApplicationController
     @hd = params[:hl]
     @news_discussion = NewsDiscussion.new
     respond_to do |format|
+    if @hd==nil
+      format.html {redirect_to @news_discussion}
+    else
       format.html # new.html.erb
       format.json { render json: @news_discussion }
+    end
     end
   end
 
