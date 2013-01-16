@@ -15,10 +15,7 @@
       <nav class="navbar-inner">
        <div class="container">
         <h1>NewsBoard</h1>
-        <p class="ptag">News about the moment at the moment</p>
-        <% #if user_signed_in? %>
-          <p class="ptag"><%#= link_to "Log Out", destroy_user_session_path, :method => :delete %></p>
-        <%#end%>
+        <p>News about the moment at the moment</p>
         <%= render 'layouts/navigation' %>
         </div>
       </nav>
