@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-	def create
+  def create
     @news_discussions = NewsDiscussion.find(params[:news_discussion_id])
     @comment = @news_discussions.comments.create(params[:comment])
     if @comment.save
