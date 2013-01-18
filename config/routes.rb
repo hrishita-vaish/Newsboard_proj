@@ -21,6 +21,10 @@ Newsboard::Application.routes.draw do
 
   get "newscategory/sportsnews_page"
 
+  get "newscategory/about"
+
+  get "newscategory/contact"
+
  
   # The priority is based upon order of creation:
   # first created -> highest priority.

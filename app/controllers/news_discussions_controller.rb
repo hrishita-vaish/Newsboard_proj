@@ -29,7 +29,6 @@ class NewsDiscussionsController < ApplicationController
   # GET /news_discussions/new
   # GET /news_discussions/new.json
   def new
-    @name = params[:name]
     @hd = params[:hl]
     @news_discussion = NewsDiscussion.new
     respond_to do |format|

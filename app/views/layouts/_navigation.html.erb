@@ -1,6 +1,10 @@
 <a class="brand" href="/newscategory/index">NewsBoard</a>  
 <ul class="nav">
 <li><%= link_to('Discussion',news_discussions_path) %></li>
+<li><%= link_to('About us',newscategory_about_path) %></li>
+<li><%= link_to('Contact us',newscategory_contact_path) %></li>
+</ul>
+<ul class="nav pull-right">
   <% if user_signed_in? %>
     <li><%= link_to("Hello! #{current_user.username}","") %></li>
     <li><%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></li>

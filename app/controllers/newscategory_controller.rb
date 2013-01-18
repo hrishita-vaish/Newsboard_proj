@@ -31,6 +31,8 @@ end
    def description
  	 @hd ,@rsss, @a_link = params[:hl] ,params[:rss] ,params[:al]
   end
-  def aboutus
+  def about
+  end
+  def contact
   end
 end
